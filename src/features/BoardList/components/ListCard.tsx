@@ -1,53 +1,55 @@
 import Badge from "@/components/shared/Badge";
 import MoreButton from "@/components/shared/buttons/MoreButton";
-import TaskFlag from "@/components/shared/svgs/TaskFlag";
+import MoreOptions from "./MoreOptions";
+import FlagDisplay from "./FlagDisplay";
+import { useState } from "react";
 
 type Props = {
   task: TaskType;
 };
 
-type FProps = { state: TaskStateType; dueDate: string; dueTime: string };
-function FlagDisplay({ state }: FProps) {
-  if (state === "Completed") {
-    return <TaskFlag status="completed" />;
-  }
-
-  return <TaskFlag status="new" />;
-}
-
-export default function ListCard({
-  task: { priority, name, coverImageUrl, description, dueDate, dueTime, state },
-}: Props) {
+export default function ListCard({ task }: Props) {
+  const [moreOptionsIsOpen, setIsOpen] = useState(false);
+  const toggleIsOpen = () => {
+    setIsOpen((v) => !v);
+  };
   return (
     <div className="bg-white p-4 rounded-lg">
       <div className="card-header space-y-4 mb-2">
         <div className="priority">
-          <Badge text={priority} />
+          <Badge text={task.priority} />
         </div>
         <div className="flex justify-between card-title text-base">
-          <h2 className="font-semibold"> {name} </h2>
-          <MoreButton />
+          <h2 className="font-semibold"> {task.name} </h2>
+          <div className="relative">
+            <MoreButton handleClick={toggleIsOpen} />
+            {moreOptionsIsOpen && <MoreOptions task={task} />}
+          </div>
         </div>
       </div>
       <div className=" w-full card-body">
-        {coverImageUrl && (
+        {task.coverImageUrl && (
           <div className="cover-image ">
             <img
-              src={coverImageUrl}
+              src={task.coverImageUrl}
               className="h-[100px] w-full object-cover rounded-md"
             />
           </div>
         )}
-        {description && (
-          <div className="description text-[14px] py-1">{description}</div>
+        {task.description && (
+          <div className="description text-[14px] py-1">{task.description}</div>
         )}
       </div>
       <div className="card-footer flex justify-between text-xs pt-2">
         <div className="flex items-center space-x-1">
-          <FlagDisplay state={state} dueDate={dueDate} dueTime={dueTime} />
-          <span>{dueDate}</span>
+          <FlagDisplay
+            state={task.state}
+            dueDate={task.dueDate}
+            dueTime={task.dueTime}
+          />
+          <span>{task.dueDate}</span>
         </div>
-        <span>{dueTime}</span>
+        <span>{task.dueTime}</span>
       </div>
     </div>
   );

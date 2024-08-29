@@ -1,7 +1,11 @@
 import MoreHorizontal from "../svgs/MoreHorizontal";
-
-export default function MoreButton() {
+type Props = {
+  handleClick?: () => void;
+};
+export default function MoreButton({ handleClick }: Props) {
   return (
-    <button className="shadow px-1 rounded-md"><MoreHorizontal/></button>
-  )
+    <button className="shadow px-1 rounded-md" onClick={handleClick}>
+      <MoreHorizontal />
+    </button>
+  );
 }

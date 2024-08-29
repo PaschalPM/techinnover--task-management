@@ -7,7 +7,7 @@ export default function NavListItem({
   return (
     <NavLink
       to={link}
-      className="flex gap-4 p-3 items-center font-semibold text-app-grey"
+      className="flex gap-4 p-3 items-center font-semibold text-app-grey text-sm"
     >
       <div className="">{logo}</div>
       {title}

@@ -24,6 +24,7 @@ type NavListItemType = {
 
 type ModalContextType = {
   modalIsOpen: boolean;
-  openModal: () => void;
+  openModal: (childComponent: ReactNode, contentLabel?: string) => void;
   closeModal: () => void;
+  contentLabel?: string
 };

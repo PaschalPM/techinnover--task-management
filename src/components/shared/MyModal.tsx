@@ -1,7 +1,8 @@
 import { Dispatch, PropsWithChildren, SetStateAction } from "react";
 import Modal from "react-modal";
 
-const customStyles = {
+
+const customStyles: Modal.Styles = {
   content: {
     top: "50%",
     left: "50%",
@@ -10,6 +11,9 @@ const customStyles = {
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
   },
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)'
+  }
 };
 
 Modal.setAppElement("#root");
