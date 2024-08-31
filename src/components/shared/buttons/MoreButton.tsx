@@ -4,7 +4,7 @@ type Props = {
 };
 export default function MoreButton({ handleClick }: Props) {
   return (
-    <button className="shadow px-1 rounded-md" onClick={handleClick}>
+    <button className="shadow p-1 rounded-md" onClick={handleClick}>
       <MoreHorizontal />
     </button>
   );

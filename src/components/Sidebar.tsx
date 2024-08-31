@@ -44,7 +44,7 @@ export default function Sidebar({ logo }: Props) {
       </div>
       <ul>
         {listItems.map((listItem) => (
-          <NavListItem listItem={listItem} />
+          <NavListItem key={listItem.title} listItem={listItem} />
         ))}
       </ul>
     </aside>

@@ -1,6 +1,7 @@
 import { tasks } from "@/fixtures";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { BoardListType } from "./models/task-models";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

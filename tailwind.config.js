@@ -23,6 +23,7 @@ module.exports = {
         "app-light-grey": "#DDDDDD",
         "app-grey": "#65676D",
         "app-base": "#252C32",
+        "app-purple": "#6941C6",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

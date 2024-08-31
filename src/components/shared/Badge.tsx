@@ -1,6 +1,8 @@
-type Props = { text: PriorityType | number };
+import { TaskPriorityType } from "@/lib/models/task-models";
 
-function isPriority(text: PriorityType | number): text is PriorityType {
+type Props = { text: TaskPriorityType | number };
+
+function isPriority(text: TaskPriorityType | number): text is TaskPriorityType {
   if (typeof text === "string") {
     return true;
   }
@@ -9,7 +11,7 @@ function isPriority(text: PriorityType | number): text is PriorityType {
 
 type ColorGroupType = { bg: string; text: string };
 
-const priorityColors: Record<PriorityType, ColorGroupType> = {
+const priorityColors: Record<TaskPriorityType, ColorGroupType> = {
   High: {
     bg: "#EBFAE2",
     text: "#4F9C20",
@@ -27,7 +29,7 @@ export default function Badge({ text }: Props) {
   let colorGroup: ColorGroupType = {} as ColorGroupType;
   if (isPriority(text)) {
     colorGroup = priorityColors[text];
-    text = text.toUpperCase() as PriorityType;
+    text = text.toUpperCase() as TaskPriorityType;
   }
 
   return (

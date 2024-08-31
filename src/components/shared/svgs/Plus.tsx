@@ -10,16 +10,16 @@ export default function Plus() {
       <path
         d="M12 7.33333V16.6667"
         stroke="#6F6F6F"
-        stroke-width="1.33333"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.33333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M7.3335 12H16.6668"
         stroke="#6F6F6F"
-        stroke-width="1.33333"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.33333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

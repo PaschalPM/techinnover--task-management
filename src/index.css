@@ -99,3 +99,10 @@
   background-color: #f1f1f1; /* Set the color of the scrollbar track */
   border-radius: 10px; /* Round the corners of the track */
 }
+
+input.rs-input::placeholder{
+  @apply text-xs;
+}
+input.rs-input{
+  @apply text-xs;
+}

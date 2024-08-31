@@ -10,20 +10,20 @@ export default function Notes() {
       <path
         d="M6 10.5H30"
         stroke="currentColor"
-        stroke-width="2.25"
-        stroke-miterlimit="10"
+        strokeWidth="2.25"
+        strokeMiterlimit="10"
       />
       <path
         d="M6 18H30"
         stroke="currentColor"
-        stroke-width="2.25"
-        stroke-miterlimit="10"
+        strokeWidth="2.25"
+        strokeMiterlimit="10"
       />
       <path
         d="M6 25.5H30"
         stroke="currentColor"
-        stroke-width="2.25"
-        stroke-miterlimit="10"
+        strokeWidth="2.25"
+        strokeMiterlimit="10"
       />
     </svg>
   );

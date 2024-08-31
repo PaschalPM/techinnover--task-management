@@ -7,24 +7,24 @@ export default function TodoList() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_14_4255)">
+      <g clipPath="url(#clip0_14_4255)">
         <path
           d="M31.875 9.75H4.125V30.375H31.875V9.75Z"
           stroke="currentColor"
-          stroke-width="2.25"
-          stroke-miterlimit="10"
+          strokeWidth="2.25"
+          strokeMiterlimit="10"
         />
         <path
           d="M9.75 4.5V13.5"
           stroke="currentColor"
-          stroke-width="2.25"
-          stroke-miterlimit="10"
+          strokeWidth="2.25"
+          strokeMiterlimit="10"
         />
         <path
           d="M26.25 4.5V13.5"
           stroke="currentColor"
-          stroke-width="2.25"
-          stroke-miterlimit="10"
+          strokeWidth="2.25"
+          strokeMiterlimit="10"
         />
         <path d="M12.75 15H6.75V21H12.75V15Z" fill="currentColor" />
         <path d="M19.5 15H16.5V18H19.5V15Z" fill="currentColor" />

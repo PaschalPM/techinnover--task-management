@@ -10,20 +10,20 @@ export default function Inbox() {
       <path
         d="M31.5 11.205H3.75V30H31.5V11.205Z"
         stroke="currentColor"
-        stroke-width="2.25"
-        stroke-miterlimit="10"
+        strokeWidth="2.25"
+        strokeMiterlimit="10"
       />
       <path
         d="M23.73 17.595H11.52V23.61H23.73V17.595Z"
         stroke="currentColor"
-        stroke-width="2.25"
-        stroke-miterlimit="10"
+        strokeWidth="2.25"
+        strokeMiterlimit="10"
       />
       <path
         d="M11.625 11.205V5.25H23.625V11.205"
         stroke="currentColor"
-        stroke-width="2.25"
-        stroke-miterlimit="10"
+        strokeWidth="2.25"
+        strokeMiterlimit="10"
       />
     </svg>
   );

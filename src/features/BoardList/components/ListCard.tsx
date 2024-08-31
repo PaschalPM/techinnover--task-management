@@ -3,6 +3,7 @@ import MoreButton from "@/components/shared/buttons/MoreButton";
 import MoreOptions from "./MoreOptions";
 import FlagDisplay from "./FlagDisplay";
 import { useState } from "react";
+import { TaskType } from "@/lib/models/task-models";
 
 type Props = {
   task: TaskType;
@@ -23,7 +24,7 @@ export default function ListCard({ task }: Props) {
           <h2 className="font-semibold"> {task.name} </h2>
           <div className="relative">
             <MoreButton handleClick={toggleIsOpen} />
-            {moreOptionsIsOpen && <MoreOptions task={task} />}
+            {moreOptionsIsOpen && <MoreOptions task={task} handleClose={() => setIsOpen(false)}/>}
           </div>
         </div>
       </div>
