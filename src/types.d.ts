@@ -12,3 +12,7 @@ type ModalContextType = {
 };
 
 type SelectedImageType = File & { objectUrl: string };
+
+type CloudinaryUploadProgressType = number | 'completed' | 'failed'
+
+type FormControlBasePropsType = { labelText: string; placeholder?: string; isOptional?: boolean };

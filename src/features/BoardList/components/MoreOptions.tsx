@@ -1,5 +1,6 @@
 import EditTaskForm from "@/features/Forms/EditTaskForm";
-import { useClickOutside, useModalCtx } from "@/lib/hooks";
+import useClickOutside from "@/lib/hooks/clickOutside";
+import useModalCtx from "@/lib/hooks/modalCtx";
 import { TaskType } from "@/lib/models/task-models";
 
 type Props = {task: TaskType, handleClose: () => void }

@@ -1,6 +1,7 @@
 import { TaskPriorityType } from "@/lib/models/task-models";
+import { cn } from "@/lib/utils";
 
-type Props = { text: TaskPriorityType | number };
+type Props = { text: TaskPriorityType | number; isUpperCase?: boolean };
 
 function isPriority(text: TaskPriorityType | number): text is TaskPriorityType {
   if (typeof text === "string") {
@@ -25,16 +26,21 @@ const priorityColors: Record<TaskPriorityType, ColorGroupType> = {
     text: "#3069FE",
   },
 };
-export default function Badge({ text }: Props) {
+export default function Badge({ text, isUpperCase = true }: Props) {
   let colorGroup: ColorGroupType = {} as ColorGroupType;
   if (isPriority(text)) {
     colorGroup = priorityColors[text];
-    text = text.toUpperCase() as TaskPriorityType;
+    text = (isUpperCase ? text.toUpperCase() : text) as TaskPriorityType;
   }
 
   return (
     <span
-      className="bg-app-light-grey px-2 py-1 rounded-md font-medium text-xs"
+      className={cn(
+        "bg-app-light-grey px-2 py-1 rounded-sm font-medium text-xs",
+        {
+          "text-[9px]": isUpperCase === false,
+        }
+      )}
       style={{ color: colorGroup.text, backgroundColor: colorGroup.bg }}
     >
       {text}

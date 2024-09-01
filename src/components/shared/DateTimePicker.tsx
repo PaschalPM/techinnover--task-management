@@ -12,10 +12,9 @@ export default function DatePicker({ label, type, placeholder }: Props) {
         <RsuiteDatePicker
           placement="top"
           placeholder={placeholder}
-          // defaultValue={new Date()}
           format={type === "time" ? "h:mm aa" : "MMM do yyyy"}
           editable={false}
-          className=""
+          className="outline-none"
         />
       </div>
     </div>

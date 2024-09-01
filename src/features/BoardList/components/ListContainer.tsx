@@ -2,7 +2,8 @@ import ListCard from "./ListCard";
 import Badge from "@/components/shared/Badge";
 import AddButton from "@/components/shared/buttons/AddButton";
 import AddTaskForm from "@/features/Forms/AddTaskForm";
-import { useModalCtx } from "@/lib/hooks";
+import useModalCtx from "@/lib/hooks/modalCtx";
+import { BoardListType } from "@/lib/models/task-models";
 
 type Props = { boardList: BoardListType };
 
@@ -12,7 +13,7 @@ export default function ListContainer({
   const { openModal } = useModalCtx();
 
   const openAddTaskModal = () => {
-    openModal(<AddTaskForm/>);
+    openModal(<AddTaskForm />);
   };
   return (
     <>

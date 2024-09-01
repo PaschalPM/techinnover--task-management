@@ -1,10 +1,10 @@
 import { useDropzone } from "react-dropzone";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ImagePreview from "./ImagePreview";
 import UploadPrompt from "./UploadPrompt";
+import useCloudinaryUploader from "@/lib/hooks/cloudinaryUploader";
 
 type Props = { multiple?: boolean; maxFiles?: number };
-
 export default function SingleImageUploader({
   multiple = false,
   maxFiles = 1,
@@ -12,6 +12,7 @@ export default function SingleImageUploader({
   const [selectedImage, setSelectedImage] = useState<SelectedImageType | null>(
     null
   );
+  const { uploadProgress, upload } = useCloudinaryUploader();
 
   const addAcceptedImageToImageList = useCallback((acceptedImage: File) => {
     setSelectedImage(
@@ -25,6 +26,11 @@ export default function SingleImageUploader({
     addAcceptedImageToImageList(acceptedFiles[0] as unknown as File);
   };
 
+  useEffect(() => {
+    if (selectedImage){
+      upload(selectedImage)
+    }
+  }, [selectedImage?.name])
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     accept: {
@@ -36,13 +42,14 @@ export default function SingleImageUploader({
     maxSize: 1024 ** 3,
   });
   return (
-    <div {...getRootProps({ className: "border rounded-md" })}>
+    <div {...getRootProps({ className: "border rounded-md outline-none focus-visible:ring-2 ring-blue-200 focus-visible:border-blue-500" })}>
       <input {...getInputProps()} />
-      <div className="h-28 flex items-center">
+      <div className="h-24 w-full flex items-center">
         {selectedImage ? (
           <ImagePreview
             selectedImage={selectedImage}
             handleDeleteImage={() => setSelectedImage(null)}
+            uploadProgress={uploadProgress}
           />
         ) : (
           <UploadPrompt />

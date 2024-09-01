@@ -13,7 +13,7 @@ export default function ModalProvider({ children }: PropsWithChildren) {
     setChildComponent(childComponent);
   };
   const closeModal = () => {
-    setIsOpen(true);
+    setIsOpen(false);
   };
 
   return (
