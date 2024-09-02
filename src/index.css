@@ -106,3 +106,13 @@ input.rs-input::placeholder{
 input.rs-input{
   @apply text-xs;
 }
+
+li#High:hover{
+  background-color: #F6FCF2;
+}
+li#Medium:hover{
+  background-color: #F7F9FF;
+}
+li#Low:hover{
+  background-color: #FEFAFA;
+}

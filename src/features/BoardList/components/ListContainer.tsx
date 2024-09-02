@@ -13,7 +13,7 @@ export default function ListContainer({
   const { openModal } = useModalCtx();
 
   const openAddTaskModal = () => {
-    openModal(<AddTaskForm />);
+    openModal(<AddTaskForm taskState={title} />);
   };
   return (
     <>

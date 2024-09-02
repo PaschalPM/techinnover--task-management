@@ -1,14 +1,15 @@
 import DateTimePicker from "@/components/shared/DateTimePicker";
 import ImageField from "@/components/shared/form-controls/ImageField";
 import InputField from "@/components/shared/form-controls/InputField";
-import PrioritySelectField from "@/components/shared/form-controls/PrioritySelectField";
+import PrioritySelectField from "@/features/PriorityFormControl/PrioritySelectField";
 import TextField from "@/components/shared/form-controls/TextField";
-import Label from "@/components/shared/Label";
 import X from "@/components/shared/svgs/X";
 import useModalCtx from "@/lib/hooks/modalCtx";
+import { TaskStateType } from "@/lib/models/task-models";
 
-export default function AddTaskForm() {
-  const {closeModal} = useModalCtx()
+type Props = { taskState?: TaskStateType };
+export default function AddTaskForm({ taskState }: Props) {
+  const { closeModal } = useModalCtx();
   return (
     <div className="max-h-screen">
       <div className="flex justify-between mb-3 items-center">
@@ -25,7 +26,7 @@ export default function AddTaskForm() {
           isOptional={true}
         />
 
-        <PrioritySelectField/>
+        <PrioritySelectField />
         <ImageField labelText="Upload cover" isOptional={true} />
 
         <div className="form-group flex gap-2">
